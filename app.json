@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "عين المستهلك",
+    "slug": "consumer-eye-latakia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "experiments": {
+      "baseUrl": ""
+    }
+  }
+}
