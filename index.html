@@ -10,48 +10,65 @@
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--g:#0d241e;--g2:#143a2f;--au:#c5a059;--bg:#fcfbf7;--tx:#121824;--mu:#6e727b;--bd:#d9d3c3;--ok:#1f7a4d;--no:#b3261e;color-scheme:light;box-sizing:border-box}
-*{box-sizing:border-box}
-body{margin:0;font-family:'IBM Plex Sans Arabic',Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
-header{background:var(--g);color:#fff;padding-top:env(safe-area-inset-top,0px)}
-.hd{display:flex;align-items:center;gap:12px;padding:12px 16px}
-.hd>div:nth-child(2){flex:1;line-height:1.5}
-.hd small{display:block;font-size:12px;color:#b9c7c1}
-.hd b{display:block;font-size:18px;font-weight:800}
-.hd span{font-size:13px;color:#d9e2de}
-#lg,.lg{width:56px;height:56px;border-radius:12px;object-fit:contain;background:var(--g2);border:1px solid #2c4a40;display:flex;align-items:center;justify-content:center;color:var(--au);font-size:26px}
-#out{width:44px;height:44px;border-radius:50%;border:0;background:var(--g2);color:var(--au);font-size:20px;display:none;align-items:center;justify-content:center}
-.sub{background:#081410;color:var(--au);font-weight:600;font-size:13px;padding:8px 16px}
-main{padding:16px}
-.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:12px}
+:root{--g:#0a211b;--g2:#10332a;--g3:#17463a;--au:#c8a35d;--au2:#e6cc8c;--au3:#9a7835;--bg:#f6f3ea;--tx:#13201c;--mu:#66726c;--bd:#e3ddcc;--ok:#1f7a4d;--no:#a82a22;color-scheme:light;box-sizing:border-box}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'IBM Plex Sans Arabic',Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+header{background:linear-gradient(165deg,#0f3027 0%,#0a211b 55%,#06150f 100%);color:#fff;padding-top:env(safe-area-inset-top,0px);position:relative;border-bottom:0}
+header::after{content:"";display:block;height:3px;background:linear-gradient(90deg,#8a6a2c,#e6cc8c 50%,#8a6a2c)}
+.hd{display:flex;align-items:center;gap:14px;padding:16px 18px 14px}
+.hd>div:nth-child(2){flex:1;line-height:1.55}
+.hd small{display:block;font-size:12.5px;color:#a9bdb5;font-weight:500}
+.hd b{display:block;font-size:19px;font-weight:700;color:#fff;margin:1px 0 2px}
+.hd span{font-size:13px;color:#cfdcd6}
+#lg,.lg{width:64px;height:64px;border-radius:16px;object-fit:contain;background:#0b2a23;border:1.5px solid var(--au);box-shadow:0 0 0 3px rgba(200,163,93,.14),0 8px 20px -6px rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;color:var(--au);font-size:26px;flex:none}
+#out{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(200,163,93,.55);background:rgba(255,255,255,.04);color:var(--au2);display:none;align-items:center;justify-content:center;padding:0;flex:none}
+#out svg{width:20px;height:20px}
+.sub{background:#06130f;color:var(--au2);font-weight:600;font-size:13px;padding:10px 18px;border-top:1px solid rgba(255,255,255,.06)}
+main{padding:18px 16px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 1px 2px rgba(10,33,27,.05),0 10px 24px -14px rgba(10,33,27,.28)}
 .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-h2{margin:0 0 4px;font-size:20px}
+h2{margin:0 0 4px;font-size:20px;font-weight:700;color:var(--g);letter-spacing:0}
 .mu{color:var(--mu);font-size:14px;margin:4px 0}
-label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
-input,select{width:100%;font:inherit;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fbfaf7;color:var(--tx)}
+label{display:block;font-weight:600;margin:14px 0 7px;font-size:14px;color:#26352f}
+input,select,textarea{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--bd);border-radius:12px;background:#fbfaf6;color:var(--tx);transition:border-color .15s,box-shadow .15s,background .15s}
+input::placeholder,textarea::placeholder{color:#9aa49f}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--au);background:#fff;box-shadow:0 0 0 4px rgba(200,163,93,.2)}
+textarea{min-height:110px}
 .ltr{direction:ltr;text-align:right}
-.btn{display:block;width:100%;margin-top:16px;padding:14px;border:0;border-radius:10px;background:var(--g);color:var(--au);font:inherit;font-weight:800;font-size:16px}
-.btn.s{background:#fff;color:var(--tx);border:1px solid var(--bd);margin-top:8px}
-.sm{display:inline-block;padding:8px 14px;border-radius:10px;border:0;font:inherit;font-weight:600;font-size:14px;background:var(--g);color:var(--au);text-decoration:none}
-.sm.n{background:#fff;color:var(--no);border:1px solid var(--no)}
-.er{color:var(--no);font-size:14px;min-height:20px;margin-top:10px}
+.btn{display:block;width:100%;margin-top:16px;padding:15px;border:1px solid rgba(200,163,93,.45);border-radius:14px;background:linear-gradient(180deg,#143a30,#0a211b);color:var(--au2);font:inherit;font-weight:700;font-size:16px;box-shadow:0 10px 20px -10px rgba(10,33,27,.7),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .12s,box-shadow .12s}
+.btn:active,.sm:active,.seg button:active,.chips button:active{transform:scale(.97)}
+.btn.s{background:#fff;color:var(--g);border:1.5px solid var(--bd);margin-top:10px;box-shadow:none}
+.sm{display:inline-block;padding:9px 16px;border-radius:11px;border:1px solid rgba(200,163,93,.45);font:inherit;font-weight:600;font-size:14px;background:linear-gradient(180deg,#143a30,#0a211b);color:var(--au2);text-decoration:none;transition:transform .12s}
+.sm.n{background:#fff;color:var(--no);border:1.5px solid #e4b9b5}
+.er{color:var(--no);font-size:14px;min-height:20px;margin-top:10px;font-weight:500}
 .pr{font-weight:800;font-size:17px;color:var(--g)}
 .up{color:var(--no)}.dn{color:var(--ok)}.eq{color:var(--mu)}
-.tag{font-size:12px;padding:2px 8px;border-radius:8px;background:#efe8d6;color:#6b5420}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:#f1e8cf;color:#6b5420;font-weight:600;border:1px solid #e4d5a8}
 .ok{color:var(--ok);font-weight:600}.bad{color:var(--no);font-weight:600}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
-nav button{font-size:13px!important;flex:1;padding:14px 4px;border:0;border-top:3px solid transparent;background:none;font:inherit;font-size:14px;color:var(--mu)}
-nav button.on{border-top-color:var(--au);color:var(--g);font-weight:800}
-.st{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.st .card{margin:0;text-align:center}.st b{font-size:28px;display:block}
-#tt{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:12px 18px;border-radius:12px;z-index:9;font-size:14px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}.chips button{white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid var(--bd);background:#fff;font:inherit;font-size:14px}.chips .on,.seg .on{background:var(--g);color:var(--au);border-color:var(--g)}
-.seg{display:flex;gap:6px;margin:10px 0}.seg button{flex:1;padding:10px;border-radius:10px;border:1px solid var(--bd);background:#fff;font:inherit}
-header{border-bottom:2px solid var(--au)}.sub{background:#081410}h2{font-weight:700}.card{box-shadow:0 1px 2px rgba(13,42,34,.07)}
-input:focus,select:focus{outline:2px solid var(--au);outline-offset:1px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--bd);box-shadow:0 -8px 24px -12px rgba(10,33,27,.25);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav button{font-size:13.5px!important;flex:1;padding:15px 4px 13px;border:0;border-top:3px solid transparent;background:none;font:inherit;font-size:14px;color:var(--mu);transition:color .15s}
+nav button.on{border-top-color:var(--au);color:var(--g);font-weight:800;background:linear-gradient(180deg,rgba(200,163,93,.14),transparent 70%)}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.st .card{margin:0;text-align:center;padding:20px 12px 18px;transition:transform .12s}
+.st .card:active{transform:scale(.98)}
+.st b{font-size:28px;display:block;color:var(--g)}
+.st b.bad{color:var(--no)}.st b.ok{color:var(--ok)}
+.st .sel{background:linear-gradient(165deg,#164236,#0a211b);border-color:rgba(200,163,93,.55);color:#fff;box-shadow:0 14px 26px -14px rgba(10,33,27,.8),inset 0 1px 0 rgba(255,255,255,.08)}
+.st .sel b{color:#fff}.st .sel .mu{color:#cfdcd6}
+.ic{width:54px;height:54px;margin:0 auto 10px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#fbf3dc,#f1e4bb);border:1px solid #e2cf9a;color:var(--g)}
+.ic svg{width:28px;height:28px}
+.sel .ic{background:rgba(200,163,93,.14);border-color:rgba(200,163,93,.6);color:var(--au2)}
+#tt{position:fixed;bottom:calc(94px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:13px 20px;border-radius:14px;z-index:9;font-size:14px;border:1px solid rgba(200,163,93,.5);box-shadow:0 14px 28px -10px rgba(0,0,0,.5);max-width:90%;text-align:center}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.chips button{white-space:nowrap;padding:9px 16px;border-radius:22px;border:1.5px solid var(--bd);background:#fff;font:inherit;font-size:14px;color:var(--tx);transition:transform .12s}
+.chips .on,.seg .on{background:linear-gradient(180deg,#143a30,#0a211b);color:var(--au2);border-color:var(--g)}
+.seg{display:flex;gap:8px;margin:12px 0}
+.seg button{flex:1;padding:11px;border-radius:12px;border:1.5px solid var(--bd);background:#fff;font:inherit;color:var(--tx);transition:transform .12s}
 #qr svg{width:100%;height:auto}
-.rb{background:transparent;color:#d9e2de;border:1px solid #2c4a40;padding:3px 10px;border-radius:8px;font-weight:600;font-size:12px}#out{width:38px;height:38px}
-.st .sel{background:var(--g);color:#fff}.st .sel .mu{color:#d9e2de}textarea{width:100%;font:inherit;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fbfaf7;min-height:110px}
+.rb{background:transparent;color:var(--au2);border:1px solid rgba(200,163,93,.4);padding:3px 11px;border-radius:20px;font-weight:600;font-size:12px}
+a.sm svg{width:15px;height:15px;vertical-align:-3px;margin-inline-start:4px}
+button:focus-visible,a:focus-visible{outline:3px solid rgba(200,163,93,.65);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -63,7 +80,6 @@ input:focus,select:focus{outline:2px solid var(--au);outline-offset:1px}
 </div>
 <div class="sub row"><span>عين المستهلك – محافظة اللاذقية</span><span id="rb" class="rb"></span></div>
 </header>
-<div style="background:#fff9e3;color:#7a4a00;font-size:13px;padding:10px 16px;border-bottom:1px solid #e8d98a">الأسعار والأرقام والسجلات المعروضة حالياً للاختبار فقط، وليست أسعاراً أو قرارات رسمية.</div>
 <main id="m"></main>
 <nav id="nv"></nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
@@ -121,7 +137,8 @@ D.u.push({id:Date.now(),role:$('#rl').value,phone:ph,pass:pw,shop:sh,hood:$('#hd
 function vMy(){const u=me(),l=D.i.filter(i=>i.uid==u.id);
 return `<div class="card"><h2>${e(u.shop)}</h2><p class="mu">${RL[u.role]} · ${l.length} / 1000 مادة</p></div>`+(l.length?l.map(i=>`<div class="card"><div class="row"><b>${e(i.name)}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(i.type)}${i.kind?' · '+e(i.kind):''} · ${e(i.pack||'')}${expT(i)}</p><p class="mu ltr" style="text-align:right">${e(i.barcode)}</p><button class="sm n" onclick="del(${i.id})">حذف</button></div>`).join(''):'<div class="card"><p class="mu">لم تضف أي مادة بعد.</p></div>')}
 function del(id){if(confirm('حذف هذه المادة؟')){D.i=D.i.filter(i=>i.id!=id);save();render()}}
-function vAdd(){return `<div class="card"><h2>إضافة مادة</h2><label>اسم المادة</label><input id="nm"><label>الصنف</label><select id="ty">${TY.map(t=>`<option>${t}</option>`).join('')}</select><label>النوع (الماركة أو المنشأ)</label><input id="tp" placeholder="مثال: محلي، مستورد، اسم الماركة"><label>العبوة</label><input id="pk" placeholder="مثال: 1 كغ"><label>تاريخ انتهاء الصلاحية (مطلوب)</label><input id="ex" type="date" class="ltr"><label>الباركود</label><input id="bc" class="ltr" inputmode="numeric"><button class="btn s" type="button" onclick="scan('bc')">مسح الباركود بالكاميرا</button><label>السعر (ل.س)</label><input id="pc" class="ltr" inputmode="numeric"><div class="er" id="er"></div><button class="btn" onclick="addI()">حفظ المادة</button></div>`}
+let BCV='';function bwGo(){const v=$('#bw').value.trim();if(!v)return err('اكتب الباركود');BCV=v;go('add')}
+function vAdd(){const bv=BCV;BCV='';return `<div class="card"><h2>إضافة مادة</h2><label>اسم المادة</label><input id="nm"><label>الصنف</label><select id="ty">${TY.map(t=>`<option>${t}</option>`).join('')}</select><label>النوع (الماركة أو المنشأ)</label><input id="tp" placeholder="مثال: محلي، مستورد، اسم الماركة"><label>العبوة</label><input id="pk" placeholder="مثال: 1 كغ"><label>تاريخ انتهاء الصلاحية (مطلوب)</label><input id="ex" type="date" class="ltr"><label>الباركود</label><input id="bc" class="ltr" inputmode="numeric" value="${e(bv)}"><button class="btn s" type="button" onclick="scan('bc')">مسح الباركود بالكاميرا</button><label>السعر (ل.س)</label><input id="pc" class="ltr" inputmode="numeric"><div class="er" id="er"></div><button class="btn" onclick="addI()">حفظ المادة</button></div>`}
 function addI(){const u=me(),tp=$('#tp').value.trim(),nm=$('#nm').value.trim(),bc=$('#bc').value.trim(),pc=Number($('#pc').value);
 if(!nm)return err('اكتب اسم المادة');
 if(!tp)return err('اكتب نوع المادة');
@@ -141,7 +158,7 @@ const v=document.createElement('video');v.srcObject=st;v.setAttribute('playsinli
 const b=document.createElement('button');b.textContent='إغلاق';b.className='sm';b.style.cssText='position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:16px;z-index:21';
 const end=()=>{st.getTracks().forEach(t=>t.stop());v.remove();b.remove()};b.onclick=end;document.body.append(v,b);await v.play();
 const d=new BarcodeDetector();const tick=async()=>{if(!v.isConnected)return;try{const r=await d.detect(v);if(r.length){const c=r[0].rawValue;end();$('#'+id).value=c;if(id=='sq'){q=c;const f=groups().filter(x=>x.l.some(i=>i.barcode==c));if(f.length==1){sel=f[0].k;render()}else{$('#ls').innerHTML=lst();if(!f.length)toast('لا توجد مادة بهذا الباركود')}}return}}catch(x){}setTimeout(tick,300)};tick()}
-function vAcc(){const u=me();return `<div class="card"><h2>حسابي</h2><p class="mu">${e(u.shop)} · ${RL[u.role]}</p><p class="mu">${e(u.hood||'')}</p>${u.own?`<p class="mu">المسؤول: ${e(u.own)}${u.act?' · '+e(u.act):''}</p>`:''}<p class="mu ltr" style="text-align:right">${e(u.phone)}</p>${u.reg?`<p class="mu">السجل التجاري: ${e(u.reg)}</p>`:''}<a class="btn s" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="${map(u)}">عرض موقعي على الخريطة</a></div>${u.role=='retail'?`<div class="card" style="text-align:center"><h2 style="font-size:17px">رمز QR للمحل</h2><p class="mu">ألصقه على واجهة المحل ليفتح المواطن أسعارك وموقعك</p><div id="qr" style="width:220px;margin:auto"></div></div>`:''}`}
+function vAcc(){const u=me();return `<div class="card"><h2>حسابي</h2><p class="mu">${e(u.shop)} · ${RL[u.role]}</p><p class="mu">${e(u.hood||'')}</p>${u.own?`<p class="mu">المسؤول: ${e(u.own)}${u.act?' · '+e(u.act):''}</p>`:''}<p class="mu ltr" style="text-align:right">${e(u.phone)}</p>${u.reg?`<p class="mu">السجل التجاري: ${e(u.reg)}</p>`:''}<a class="btn s" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="${map(u)}">عرض موقعي على الخريطة</a></div>${u.role=='wholesale'?`<div class="card"><h2 style="font-size:17px">إدخال الباركود</h2><input id="bw" class="ltr" inputmode="numeric"><button class="btn s" type="button" onclick="scan('bw')">مسح الباركود بالكاميرا</button><div class="er" id="er"></div><button class="btn" onclick="bwGo()">إدخال الباركود</button></div>`:''}${u.role=='retail'?`<div class="card" style="text-align:center"><h2 style="font-size:17px">رمز QR للمحل</h2><p class="mu">ألصقه على واجهة المحل ليفتح المواطن أسعارك وموقعك</p><div id="qr" style="width:220px;margin:auto"></div></div>`:''}`}
 
 function vReq(){const l=D.u.filter(u=>u.status=='pending');
 return `<h2 style="margin-bottom:12px">طلبات التسجيل (${l.length})</h2>`+(l.length?l.map(u=>`<div class="card"><div class="row"><b>${e(u.shop)}</b><span class="tag">${RL[u.role]}</span></div><p class="mu">${e(u.hood||'')}</p>${u.own?`<p class="mu">المسؤول: ${e(u.own)}${u.act?' · '+e(u.act):''}</p>`:''}<p class="mu ltr" style="text-align:right">${e(u.phone)}</p>${u.reg?`<p class="mu">السجل التجاري: ${e(u.reg)}</p>`:''}<p><a class="mu" target="_blank" rel="noopener" href="${map(u)}">عرض الموقع على الخريطة</a></p><div class="row"><button class="sm" onclick="dec(${u.id},'approved')">موافقة</button><button class="sm n" onclick="dec(${u.id},'rejected')">رفض</button></div></div>`).join(''):'<div class="card"><p class="mu">لا توجد طلبات بانتظار الموافقة.</p></div>')}
@@ -166,8 +183,9 @@ function vPr(){const g=groups(pw).map(x=>{const p=x.l.map(i=>i.price),v=ser(x.l,
 const up=g.filter(o=>o.c>0).length,dn=g.filter(o=>o.c<0).length;
 return `<h2>تقرير الأسعار</h2><p class=\"mu\">${fd(Date.now())} · ${pw=='retail'?'أسعار التجزئة':'أسعار الجملة'} · الأكثر تغيراً أولاً</p><div class=\"seg\">${[['retail','تجزئة'],['wholesale','جملة']].map(c=>`<button class=\"${pw==c[0]?'on':''}\" onclick=\"pw='${c[0]}';render()\">${c[1]}</button>`).join('')}</div>${seg()}<div class=\"st\"><div class=\"card\"><b>${g.length}</b><span class=\"mu\">مادة في التقرير</span></div><div class=\"card\"><b><span class=\"up\">▲ ${up}</span> <span class=\"dn\">▼ ${dn}</span></b><span class=\"mu\">ارتفعت / انخفضت خلال ${PL[P]}</span></div></div>`+(g.length?g.map(o=>`<div class=\"card\"><div class=\"row\"><div><b>${e(o.x.name)}${o.x.kind?' – '+e(o.x.kind):''}</b><div class=\"mu\">${e(o.x.pack||'')} · ${o.x.l.length} منشأة</div></div><div style=\"text-align:left\"><div class=\"pr\">${fp(Math.round(o.av))}</div><div class=\"mu\">المتوسط الحالي</div></div></div><div class=\"row mu\" style=\"margin:8px 0\"><span>الأدنى حالياً ${fp(o.mn)}</span><span>الأعلى حالياً ${fp(o.mx)}</span></div>${chart(o.x.l)}</div>`).join(''):'<div class=\"card\"><p class=\"mu\">لا توجد بيانات بعد.</p></div>')}
 const CT=['نظافة وصحة','مادة منتهية الصلاحية','سعر مخالف','أخرى'];let ct=CT[0];let rs='retail';
-function vWel(){const C=[['retail','🏪','تاجر تجزئة','لوائح الأسعار اليومية'],['citizen','🔎','خدمة المواطن','دليل الأسعار وتقديم الشكاوى'],['admin','🛡','الرقابة التموينية','الضبوط والمطابقة الميدانية'],['wholesale','📦','مورد / تاجر جملة','فواتير وتدفق التوريد']];
-return `<div class="st">${C.map(c=>`<div class="card ${rs==c[0]?'sel':''}" onclick="pick('${c[0]}')"><div style="font-size:26px">${c[1]}</div><b style="font-size:17px">${c[2]}</b><div class="mu">${c[3]}</div></div>`).join('')}</div><div class="card"><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="مثال: 09XXXXXXXX"><label>كلمة المرور / الرمز السري</label><input id="pw" type="password"><div class="er" id="er"></div><button class="btn" onclick="doLogin()">تسجيل الدخول إلى المنظومة</button><p class="mu" style="text-align:center">أو خيارات الوصول السريع</p><button class="btn s" onclick="go('guide')">دخول حر للمواطنين (تصفح دليل النشرات التموينية فقط)</button><button class="btn s" onclick="go('reg')">تسجيل منشأة جديدة</button></div><div class="card row"><b>غرفة العمليات المركزية والدعم الفني</b><a class="sm" href="tel:119">119 📞</a></div>`}
+const IC={"retail": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 9l1.2-4.5A1 1 0 0 1 6.2 4h11.6a1 1 0 0 1 1 .5L20 9\"/><path d=\"M4 9a2.67 2.67 0 0 0 5.33 0 2.67 2.67 0 0 0 5.34 0A2.67 2.67 0 0 0 20 9\"/><path d=\"M5 12v8h14v-8\"/><path d=\"M10 20v-5h4v5\"/></svg>", "citizen": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.5 15.5L21 21\"/></svg>", "admin": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7.5 3v5.5c0 4.4-3.1 8.1-7.5 9.5-4.4-1.4-7.5-5.1-7.5-9.5V6z\"/><path d=\"M8.7 12.2l2.3 2.3 4.3-4.6\"/></svg>", "wholesale": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 8l-9-5-9 5 9 5z\"/><path d=\"M3 8v8l9 5 9-5V8\"/><path d=\"M12 13v8\"/><path d=\"M7.5 5.5l9 5\"/></svg>", "phone": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z\"/></svg>", "user": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7\"/></svg>", "out": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4\"/><path d=\"M16 8l4 4-4 4\"/><path d=\"M20 12H9\"/></svg>", "dir": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/></svg>"};
+function vWel(){const C=[['retail',IC.retail,'تاجر تجزئة','لوائح الأسعار اليومية'],['citizen',IC.citizen,'خدمة المواطن','دليل الأسعار وتقديم الشكاوى'],['admin',IC.admin,'الرقابة التموينية','الضبوط والمطابقة الميدانية'],['wholesale',IC.wholesale,'مورد / تاجر جملة','فواتير وتدفق التوريد']];
+return `<div class="st">${C.map(c=>`<div class="card ${rs==c[0]?'sel':''}" onclick="pick('${c[0]}')"><div class="ic">${c[1]}</div><b style="font-size:17px">${c[2]}</b><div class="mu">${c[3]}</div></div>`).join('')}</div><div class="card"><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="مثال: 09XXXXXXXX"><label>كلمة المرور / الرمز السري</label><input id="pw" type="password"><div class="er" id="er"></div><button class="btn" onclick="doLogin()">تسجيل الدخول إلى المنظومة</button><p class="mu" style="text-align:center">أو خيارات الوصول السريع</p><button class="btn s" onclick="go('guide')">دخول حر للمواطنين (تصفح دليل النشرات التموينية فقط)</button><button class="btn s" onclick="go('reg')">تسجيل منشأة جديدة</button></div><div class="card row"><b>غرفة العمليات المركزية والدعم الفني</b><a class="sm" href="tel:119">119 ${IC.phone}</a></div>`}
 function pick(r){if(r=='citizen')return go('guide');rs=r;render()}
 function vCm(){return `<div class="card"><h2>تقديم بلاغ</h2><p class="mu">يُسجَّل البلاغ فوراً ويُحال إلى دائرة الرقابة.</p></div><div class="card"><h2 style="font-size:17px">نوع البلاغ</h2><div class="seg" style="flex-wrap:wrap">${CT.map(t=>`<button class="${t==ct?'on':''}" onclick="ct='${t}';render()">${t}</button>`).join('')}</div><label>اسم المنشأة والحي</label><input id="cs" placeholder="مثال: ماركت السلام - شارع بغداد"><label>وصف المخالفة</label><textarea id="cd" placeholder="اكتب ما شاهدته..."></textarea><p class="mu">هويتك مخفية عن المنشأة ولا تظهر إلا للمديرية.</p><div class="er" id="er"></div><button class="btn" onclick="doCm()">إرسال البلاغ</button><button class="btn s" onclick="go('guide')">إلغاء</button></div>`}
 function doCm(){const s=$('#cs').value.trim(),d=$('#cd').value.trim();if(!s)return err('اكتب اسم المنشأة');if(d.length<5)return err('اكتب وصف المخالفة');const n='B'+String(Date.now()).slice(-6);D.c.push({id:n,t:ct,sh:s,d,s:'new',at:Date.now()});save();toast('تم إرسال البلاغ. رقم المتابعة: '+n);go('guide')}
@@ -180,7 +198,7 @@ function wl(role,hx){const l=D.i.filter(i=>{const s=D.u.find(x=>x.id==i.uid);ret
 return l.length?l.map(i=>{const s=D.u.find(x=>x.id==i.uid);return `<div class="card"><div class="row"><b>${e(i.name)}${i.kind?' – '+e(i.kind):''}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(i.type)} · ${e(i.pack||'')}${expT(i)}</p><p class="mu">${e(s.shop)} · ${e(s.hood||'')} · ${RL[s.role]} · ${fd(i.t)}</p><p class="mu ltr" style="text-align:right">${e(i.barcode)}</p>${s.lat?`<a class="sm" target="_blank" rel="noopener" href="${map(s)}">الاتجاهات</a>`:''}</div>`}).join(''):'<div class="card"><p class="mu">لا توجد مواد.</p></div>'}
 function vAll(){return `<h2>كل المواد (جملة وتجزئة)</h2><div class="chips">${[['','الكل'],['retail','تجزئة'],['wholesale','جملة']].map(c=>`<button class="${ar==c[0]?'on':''}" onclick="ar='${c[0]}';render()">${c[1]}</button>`).join('')}</div><input placeholder="اسم المادة أو الباركود أو المنشأة" value="${e(wq)}" oninput="wq=this.value.trim();$('#wr').innerHTML=wl(ar,0)"><div id="wr" style="margin-top:12px">${wl(ar,0)}</div>`}
 function render(){let u=S&&me();if(S&&(!u||u.status!='approved'))S=u=null;
-$('#out').style.display='flex';$('#out').textContent=u?'⎋':'👤';$('#out').onclick=u?out:null;
+$('#out').style.display='flex';$('#out').innerHTML=u?IC.out:IC.user;$('#out').onclick=u?out:null;
 let nav,h;
 if(!u){nav=[];if(view=='reg')h=vReg();else if(view=='cm')h=vCm();else if(view=='guide')h=vHome();else{view='home';h=vWel()}}
 else if(u.role=='admin'){nav=[['req','الطلبات'],['cl','الشكاوى'],['tr','التجار'],['all','المواد'],['pr','التقرير']];if(!['tr','pr','cl','all'].includes(view))view='req';h=view=='all'?vAll():view=='tr'?vTr():view=='pr'?vPr():view=='cl'?vCl():vReq()}
