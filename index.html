@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="عين المستهلك - مديرية التجارة الداخلية وحماية المستهلك في اللاذقية">
+<title>عين المستهلك</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d241e">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0d241e;--g2:#143a2f;--au:#c5a059;--bg:#fcfbf7;--tx:#121824;--mu:#6e727b;--bd:#d9d3c3;--ok:#1f7a4d;--no:#b3261e;color-scheme:light;box-sizing:border-box}
+*{box-sizing:border-box}
+body{margin:0;font-family:'IBM Plex Sans Arabic',Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+header{background:var(--g);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.hd{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.hd>div:nth-child(2){flex:1;line-height:1.5}
+.hd small{display:block;font-size:12px;color:#b9c7c1}
+.hd b{display:block;font-size:18px;font-weight:800}
+.hd span{font-size:13px;color:#d9e2de}
+#lg,.lg{width:56px;height:56px;border-radius:12px;object-fit:contain;background:var(--g2);border:1px solid #2c4a40;display:flex;align-items:center;justify-content:center;color:var(--au);font-size:26px}
+#out{width:44px;height:44px;border-radius:50%;border:0;background:var(--g2);color:var(--au);font-size:20px;display:none;align-items:center;justify-content:center}
+.sub{background:#081410;color:var(--au);font-weight:600;font-size:13px;padding:8px 16px}
+main{padding:16px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+h2{margin:0 0 4px;font-size:20px}
+.mu{color:var(--mu);font-size:14px;margin:4px 0}
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}
+input,select{width:100%;font:inherit;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fbfaf7;color:var(--tx)}
+.ltr{direction:ltr;text-align:right}
+.btn{display:block;width:100%;margin-top:16px;padding:14px;border:0;border-radius:10px;background:var(--g);color:var(--au);font:inherit;font-weight:800;font-size:16px}
+.btn.s{background:#fff;color:var(--tx);border:1px solid var(--bd);margin-top:8px}
+.sm{display:inline-block;padding:8px 14px;border-radius:10px;border:0;font:inherit;font-weight:600;font-size:14px;background:var(--g);color:var(--au);text-decoration:none}
+.sm.n{background:#fff;color:var(--no);border:1px solid var(--no)}
+.er{color:var(--no);font-size:14px;min-height:20px;margin-top:10px}
+.pr{font-weight:800;font-size:17px;color:var(--g)}
+.up{color:var(--no)}.dn{color:var(--ok)}.eq{color:var(--mu)}
+.tag{font-size:12px;padding:2px 8px;border-radius:8px;background:#efe8d6;color:#6b5420}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--no);font-weight:600}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav button{font-size:13px!important;flex:1;padding:14px 4px;border:0;border-top:3px solid transparent;background:none;font:inherit;font-size:14px;color:var(--mu)}
+nav button.on{border-top-color:var(--au);color:var(--g);font-weight:800}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.st .card{margin:0;text-align:center}.st b{font-size:28px;display:block}
+#tt{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:12px 18px;border-radius:12px;z-index:9;font-size:14px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}.chips button{white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid var(--bd);background:#fff;font:inherit;font-size:14px}.chips .on,.seg .on{background:var(--g);color:var(--au);border-color:var(--g)}
+.seg{display:flex;gap:6px;margin:10px 0}.seg button{flex:1;padding:10px;border-radius:10px;border:1px solid var(--bd);background:#fff;font:inherit}
+header{border-bottom:2px solid var(--au)}.sub{background:#081410}h2{font-weight:700}.card{box-shadow:0 1px 2px rgba(13,42,34,.07)}
+input:focus,select:focus{outline:2px solid var(--au);outline-offset:1px}
+#qr svg{width:100%;height:auto}
+.rb{background:var(--au);color:var(--g);padding:3px 10px;border-radius:8px;font-weight:700;font-size:12px}#out{width:38px;height:38px}
+.st .sel{background:var(--g);color:#fff}.st .sel .mu{color:#d9e2de}textarea{width:100%;font:inherit;padding:13px;border:1px solid var(--bd);border-radius:10px;background:#fbfaf7;min-height:110px}
+</style>
+</head>
+<body>
+<header>
+<div class="hd">
+<img id="lg" src="emblem.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'lg',textContent:'★'}))">
+<div><small>الجمهورية العربية السورية</small><b>وزارة الاقتصاد والصناعة</b><span>مديرية التجارة الداخلية وحماية المستهلك في اللاذقية</span></div>
+<button id="out" onclick="out()" aria-label="تسجيل الخروج">⎋</button>
+</div>
+<div class="sub row"><span>عين المستهلك – محافظة اللاذقية</span><span id="rb" class="rb"></span></div>
+</header>
+<div style="background:#fff9e3;color:#7a4a00;font-size:13px;padding:10px 16px;border-bottom:1px solid #e8d98a">الأسعار والأرقام والسجلات المعروضة حالياً للاختبار فقط، وليست أسعاراً أو قرارات رسمية.</div>
+<main id="m"></main>
+<nav id="nv"></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const e=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let D=null,S=null,view='home',q='',sel=null,L=null,P=30,ty='',SH=null;const PL={7:'أسبوع',30:'شهر',365:'سنة'};
+try{D=JSON.parse(localStorage.getItem('ain'));S=JSON.parse(localStorage.getItem('ain_s'))}catch(x){}
+{const m=location.hash.match(/^#s(\d+)$/);if(m)SH=+m[1]}
+if(!D||!Array.isArray(D.u)||!Array.isArray(D.i))D=null;if(!D)D={u:[{id:1,role:'admin',phone:'0999999999',pass:'admin123',shop:'دائرة الرقابة التموينية',status:'approved'}],i:[]};
+if(!D.c)D.c=[];const save=()=>{try{localStorage.setItem('ain',JSON.stringify(D))}catch(x){}};
+const me=()=>D.u.find(u=>u.id===S);
+const RL={retail:'تاجر تجزئة',wholesale:'تاجر جملة'};
+const TY=['مواد أساسية','خضار وفواكه','ألبان وأجبان','لحوم ودواجن','معلبات','مشروبات','منظفات','أخرى'];
+const fd=t=>new Date(t).toLocaleDateString('ar-SY');
+const fp=n=>Number(n).toLocaleString('en-US')+' ل.س';
+const map=u=>'https://www.google.com/maps/dir/?api=1&destination='+u.lat+','+u.lng;
+const arr=i=>i.prev==null||i.price==i.prev?'<span class="eq">▬</span>':i.price>i.prev?'<span class="up">▲</span>':'<span class="dn">▼</span>';
+function toast(t){const d=document.createElement('div');d.id='tt';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
+function err(t){const x=$('#er');if(x)x.textContent=t;return false}
+function go(v){view=v;sel=null;SH=null;render();scrollTo(0,0)}
+function out(){if(confirm('هل تريد تسجيل الخروج؟')){S=null;try{localStorage.removeItem('ain_s')}catch(x){}go('home')}}
+
+function ex(i){if(!i.exp)return 0;const d=(Date.parse(i.exp)-Date.now())/864e5;return d<0?2:d<=30?1:0}
+function expT(i){return i.exp?(ex(i)==2?' · <span class="bad">منتهية الصلاحية</span>':ex(i)==1?' · <span class="bad">قريبة الانتهاء ('+e(i.exp)+')</span>':' · الصلاحية '+e(i.exp)):''}
+function groups(){const m={};D.i.forEach(i=>{const s=D.u.find(x=>x.id===i.uid);if(!s||s.status!='approved'||s.role!='retail'||ex(i)==2)return;const k=(i.name+'|'+(i.kind||'')+'|'+(i.pack||'')).trim().toLowerCase();(m[k]=m[k]||{k,name:i.name,kind:i.kind,pack:i.pack,type:i.type,l:[]}).l.push(i)});return Object.values(m)}
+function lst(){const g=groups().filter(x=>(!ty||x.type==ty)&&(!q||(x.name+(x.kind||'')+(x.pack||'')+x.l.map(i=>i.barcode).join(' ')).includes(q)));
+if(!g.length)return '<div class="card"><p class="mu">لا توجد مواد مطابقة حالياً.</p></div>';
+return g.map(x=>{const p=x.l.map(i=>i.price);return `<div class="card row" data-k="${e(x.k)}" onclick="sel=this.dataset.k;render()"><div><b>${e(x.name)}${x.kind?' – '+e(x.kind):''}</b><div class="mu">${e(x.pack||'')} · ${x.l.length} منشأة</div></div><div style="text-align:left"><div class="mu">الأدنى <span class="pr">${fp(Math.min(...p))}</span></div><div class="mu">الأعلى <span class="pr">${fp(Math.max(...p))}</span></div></div></div>`}).join('')}
+function vHome(){
+if(SH){const s=D.u.find(x=>x.id==SH&&x.status=='approved'&&x.role=='retail');if(!s){SH=null;toast('المحل غير موجود في بيانات هذا الجهاز');return vHome()}
+const l=D.i.filter(i=>i.uid==s.id&&ex(i)!=2);
+return `<button class="sm" onclick="SH=null;render()">رجوع ›</button><div class="card" style="margin-top:12px"><h2>${e(s.shop)}</h2><p class="mu">${e(s.hood||'')} · منشأة تجزئة معتمدة</p><a class="sm" target="_blank" rel="noopener" href="${map(s)}">الاتجاهات إلى المحل</a></div>`+(l.length?l.map(i=>`<div class="card"><div class="row"><b>${e(i.name)}${i.kind?' – '+e(i.kind):''}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(i.pack||'')}${expT(i)}</p></div>`).join(''):'<div class="card"><p class="mu">لا توجد مواد.</p></div>')}
+if(sel){const g=groups().find(x=>x.k==sel);if(!g){sel=null;return vHome()}
+const l=g.l.slice().sort((a,b)=>a.price-b.price);
+return `<button class="sm" onclick="sel=null;render()">رجوع ›</button><h2 style="margin-top:12px">${e(g.name)}${g.kind?' – '+e(g.kind):''}</h2><p class="mu">${e(g.type||'')} · ${e(g.pack||'')}</p><div class="st"><div class="card"><span class="mu">الأدنى</span><b style="font-size:18px">${fp(l[0].price)}</b></div><div class="card"><span class="mu">الأعلى</span><b style="font-size:18px">${fp(l[l.length-1].price)}</b></div></div><div class="card"><h2 style="font-size:17px">تطور السعر</h2>${seg()}${chart(g.l)}</div><h2 style="font-size:17px;margin:16px 0 8px">الأسعار في المحلات</h2>`+l.map(i=>{const s=D.u.find(x=>x.id==i.uid);return `<div class="card"><div class="row"><b style="text-decoration:underline" onclick="SH=${s.id};render()">${e(s.shop)}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(s.hood||'')} · آخر تحديث ${fd(i.t)}${expT(i)}</p>${s.lat?`<a class="sm" target="_blank" rel="noopener" href="${map(s)}">الاتجاهات إلى المحل</a>`:''}</div>`}).join('')}
+return `<button class="sm" onclick="go('home')">رجوع ›</button><div class="card"><h2>دليل الأسعار</h2><p class="mu">ابحث بالاسم أو اكتب رقم الباركود</p><input id="sq" placeholder="اسم المادة أو الباركود…" value="${e(q)}" oninput="q=this.value.trim();$('#ls').innerHTML=lst()"><button class="btn s" type="button" onclick="scan('sq')">مسح الباركود بالكاميرا</button></div><div class="chips">${['',...TY].map(t=>`<button class="${ty==t?'on':''}" onclick="ty='${t}';render()">${t||'الكل'}</button>`).join('')}</div><div id="ls">${lst()}</div><button class="btn" onclick="go('cm')">تقديم شكوى صحية<div style="font-size:13px;font-weight:400">بلاغ فوري مع رقم متابعة</div></button>`}
+function vLogin(){return `<div class="card"><h2>تسجيل دخول التجار والرقابة</h2><p class="mu">الدخول مسموح للحسابات التي وافقت عليها الرقابة التموينية فقط.</p><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="09XXXXXXXX"><label>كلمة المرور</label><input id="pw" type="password"><div class="er" id="er"></div><button class="btn" onclick="doLogin()">تسجيل الدخول</button></div>`}
+function doLogin(){const p=$('#ph').value.trim(),w=$('#pw').value;const u=D.u.find(x=>x.phone==p&&x.pass==w);
+if(!u)return err('رقم الهاتف أو كلمة المرور غير صحيحة');
+if(u.role!=rs)return err('هذا الحساب ليس من نوع الصلاحية المحددة');if(u.status=='pending')return err('حسابك قيد المراجعة، لا يمكن الدخول قبل موافقة الرقابة التموينية.');
+if(u.status=='rejected')return err('تم رفض طلب التسجيل. راجع مديرية التجارة الداخلية.');
+S=u.id;try{localStorage.setItem('ain_s',JSON.stringify(S))}catch(x){}go(u.role=='admin'?'req':'my')}
+function vReg(){L=null;return `<div class="card"><h2>تسجيل منشأة جديدة</h2><p class="mu">يُفعَّل الحساب بعد موافقة الرقابة التموينية.</p><label>نوع الحساب</label><select id="rl"><option value="retail">تاجر تجزئة</option><option value="wholesale">تاجر جملة</option></select><label>اسم صاحب المنشأة / المسؤول</label><input id="ow"><label>نشاط المنشأة</label><input id="ac" placeholder="مثال: مواد غذائية، منظفات"><label>اسم المنشأة</label><input id="sh"><label>الحي / العنوان</label><input id="hd"><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="09XXXXXXXX"><label>كلمة المرور (6 أحرف على الأقل)</label><input id="pw" type="password"><label>رقم السجل التجاري (اختياري)</label><input id="rg" class="ltr" inputmode="numeric"><label>موقع المنشأة على الخريطة</label><button class="btn s" onclick="loc()">تحديد موقعي الحالي</button><p class="mu" id="lx">لم يُحدَّد الموقع بعد. افتح هذه الصفحة وأنت داخل المحل.</p><div class="er" id="er"></div><button class="btn" onclick="doReg()">إرسال طلب التسجيل</button></div>`}
+function loc(){$('#lx').textContent='جارٍ تحديد الموقع…';if(!navigator.geolocation)return $('#lx').textContent='المتصفح لا يدعم تحديد الموقع.';
+navigator.geolocation.getCurrentPosition(p=>{L={lat:+p.coords.latitude.toFixed(6),lng:+p.coords.longitude.toFixed(6)};$('#lx').textContent='✓ تم تحديد الموقع ('+L.lat+' ، '+L.lng+')'},()=>{$('#lx').textContent='تعذّر تحديد الموقع. اسمح للمتصفح بالوصول إلى الموقع ثم أعد المحاولة.'},{enableHighAccuracy:true,timeout:15000})}
+function doReg(){const sh=$('#sh').value.trim(),ph=$('#ph').value.trim(),pw=$('#pw').value;
+if(!sh)return err('اكتب اسم المنشأة');if(!$('#ow').value.trim())return err('اكتب اسم صاحب المنشأة');
+if(!/^09\d{8}$/.test(ph))return err('رقم الهاتف يجب أن يكون بصيغة 09XXXXXXXX');
+if(pw.length<6)return err('كلمة المرور قصيرة');
+if(!L)return err('حدّد موقع المنشأة أولاً');
+if(D.u.some(u=>u.phone==ph))return err('هذا الرقم مسجل مسبقاً');
+D.u.push({id:Date.now(),role:$('#rl').value,phone:ph,pass:pw,shop:sh,hood:$('#hd').value.trim(),reg:$('#rg').value.trim(),own:$('#ow').value.trim(),act:$('#ac').value.trim(),lat:L.lat,lng:L.lng,status:'pending'});save();go('home');toast('أُرسل الطلب. بانتظار موافقة الرقابة التموينية')}
+
+function vMy(){const u=me(),l=D.i.filter(i=>i.uid==u.id);
+return `<div class="card"><h2>${e(u.shop)}</h2><p class="mu">${RL[u.role]} · ${l.length} / 1000 مادة</p></div>`+(l.length?l.map(i=>`<div class="card"><div class="row"><b>${e(i.name)}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(i.type)}${i.kind?' · '+e(i.kind):''} · ${e(i.pack||'')}${expT(i)}</p><p class="mu ltr" style="text-align:right">${e(i.barcode)}</p><button class="sm n" onclick="del(${i.id})">حذف</button></div>`).join(''):'<div class="card"><p class="mu">لم تضف أي مادة بعد.</p></div>')}
+function del(id){if(confirm('حذف هذه المادة؟')){D.i=D.i.filter(i=>i.id!=id);save();render()}}
+function vAdd(){return `<div class="card"><h2>إضافة مادة</h2><label>اسم المادة</label><input id="nm"><label>الصنف</label><select id="ty">${TY.map(t=>`<option>${t}</option>`).join('')}</select><label>النوع (الماركة أو المنشأ)</label><input id="tp" placeholder="مثال: محلي، مستورد، اسم الماركة"><label>العبوة</label><input id="pk" placeholder="مثال: 1 كغ"><label>تاريخ انتهاء الصلاحية (مطلوب)</label><input id="ex" type="date" class="ltr"><label>الباركود</label><input id="bc" class="ltr" inputmode="numeric"><button class="btn s" type="button" onclick="scan('bc')">مسح الباركود بالكاميرا</button><label>السعر (ل.س)</label><input id="pc" class="ltr" inputmode="numeric"><div class="er" id="er"></div><button class="btn" onclick="addI()">حفظ المادة</button></div>`}
+function addI(){const u=me(),tp=$('#tp').value.trim(),nm=$('#nm').value.trim(),bc=$('#bc').value.trim(),pc=Number($('#pc').value);
+if(!nm)return err('اكتب اسم المادة');
+if(!tp)return err('اكتب نوع المادة');
+const ex0=$('#ex').value;if(!ex0)return err('تاريخ انتهاء الصلاحية مطلوب');
+if(Date.parse(ex0)<Date.now()-864e5)return err('هذه المادة منتهية الصلاحية ولا يمكن إدراجها');
+if(!bc)return err('الباركود مطلوب');
+if(!(pc>0))return err('اكتب السعر بشكل صحيح');
+const o=D.i.find(i=>i.uid==u.id&&i.barcode==bc);
+if(o){o.prev=o.price;o.exp=ex0;o.price=pc;o.t=Date.now();o.h.push([o.t,pc]);toast('تم تحديث سعر المادة')}
+else{if(D.i.filter(i=>i.uid==u.id).length>=1000)return err('بلغت الحد الأقصى 1000 مادة');
+D.i.push({id:Date.now(),uid:u.id,name:nm,kind:tp,type:$('#ty').value,pack:$('#pk').value.trim(),exp:$('#ex').value,barcode:bc,price:pc,prev:null,t:Date.now(),h:[[Date.now(),pc]]});toast('تمت إضافة المادة')}
+save();go('my')}
+const fail=x=>$('#er')?err(x):(toast(x),false);
+async function scan(id){if(!('BarcodeDetector' in window))return fail('مسح الباركود غير مدعوم في هذا المتصفح، اكتبه يدوياً');
+let st;try{st=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}})}catch(x){return fail('اسمح للمتصفح باستخدام الكاميرا')}
+const v=document.createElement('video');v.srcObject=st;v.setAttribute('playsinline','');v.style.cssText='position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:20;background:#000';
+const b=document.createElement('button');b.textContent='إغلاق';b.className='sm';b.style.cssText='position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:16px;z-index:21';
+const end=()=>{st.getTracks().forEach(t=>t.stop());v.remove();b.remove()};b.onclick=end;document.body.append(v,b);await v.play();
+const d=new BarcodeDetector();const tick=async()=>{if(!v.isConnected)return;try{const r=await d.detect(v);if(r.length){const c=r[0].rawValue;end();$('#'+id).value=c;if(id=='sq'){q=c;const f=groups().filter(x=>x.l.some(i=>i.barcode==c));if(f.length==1){sel=f[0].k;render()}else{$('#ls').innerHTML=lst();if(!f.length)toast('لا توجد مادة بهذا الباركود')}}return}}catch(x){}setTimeout(tick,300)};tick()}
+function vAcc(){const u=me();return `<div class="card"><h2>حسابي</h2><p class="mu">${e(u.shop)} · ${RL[u.role]}</p><p class="mu">${e(u.hood||'')}</p>${u.own?`<p class="mu">المسؤول: ${e(u.own)}${u.act?' · '+e(u.act):''}</p>`:''}<p class="mu ltr" style="text-align:right">${e(u.phone)}</p>${u.reg?`<p class="mu">السجل التجاري: ${e(u.reg)}</p>`:''}<a class="btn s" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="${map(u)}">عرض موقعي على الخريطة</a></div>${u.role=='retail'?`<div class="card" style="text-align:center"><h2 style="font-size:17px">رمز QR للمحل</h2><p class="mu">ألصقه على واجهة المحل ليفتح المواطن أسعارك وموقعك</p><div id="qr" style="width:220px;margin:auto"></div></div>`:''}`}
+
+function vReq(){const l=D.u.filter(u=>u.status=='pending');
+return `<h2 style="margin-bottom:12px">طلبات التسجيل (${l.length})</h2>`+(l.length?l.map(u=>`<div class="card"><div class="row"><b>${e(u.shop)}</b><span class="tag">${RL[u.role]}</span></div><p class="mu">${e(u.hood||'')}</p>${u.own?`<p class="mu">المسؤول: ${e(u.own)}${u.act?' · '+e(u.act):''}</p>`:''}<p class="mu ltr" style="text-align:right">${e(u.phone)}</p>${u.reg?`<p class="mu">السجل التجاري: ${e(u.reg)}</p>`:''}<p><a class="mu" target="_blank" rel="noopener" href="${map(u)}">عرض الموقع على الخريطة</a></p><div class="row"><button class="sm" onclick="dec(${u.id},'approved')">موافقة</button><button class="sm n" onclick="dec(${u.id},'rejected')">رفض</button></div></div>`).join(''):'<div class="card"><p class="mu">لا توجد طلبات بانتظار الموافقة.</p></div>')}
+function dec(id,s){if(!confirm(s=='approved'?'الموافقة على إدراج بيانات هذا التاجر؟':'رفض الطلب؟'))return;D.u.find(u=>u.id==id).status=s;save();render()}
+function vTr(){const vs=D.u.filter(u=>D.i.some(i=>i.uid==u.id&&ex(i)==2)).length;return `<div class="st"><div class="card"><b class="bad">${D.c.filter(c=>c.s=='new').length}</b><span class="mu">بلاغات نشطة</span></div><div class="card"><b class="bad">${vs}</b><span class="mu">منشآت مخالفة</span></div></div>`+vTr0()+'<button class="btn s" onclick="demo()">تحميل بيانات تجريبية للعرض</button><button class="btn s" onclick="undemo()">حذف البيانات التجريبية</button>'}
+function vTr0(){const t=D.u.filter(u=>u.role!='admin'&&u.status=='approved');
+const n=t.filter(u=>{const l=D.i.filter(i=>i.uid==u.id);return l.length&&Date.now()-Math.max(...l.map(i=>i.t))<864e5}).length;
+return `<div class="st"><div class="card"><b>${t.length}</b><span class="mu">منشآت معتمدة</span></div><div class="card"><b>${D.i.length}</b><span class="mu">مادة مسجلة</span></div><div class="card"><b class="ok">${n}</b><span class="mu">حدّثت اليوم</span></div><div class="card"><b class="bad">${t.length-n}</b><span class="mu">لم تحدّث اليوم</span></div></div>`+t.map(u=>{const l=D.i.filter(i=>i.uid==u.id),la=l.length?Math.max(...l.map(i=>i.t)):0,ok=la&&Date.now()-la<864e5;return `<div class="card"><div class="row"><b>${e(u.shop)}</b><span class="${ok?'ok':'bad'}">${ok?'ملتزم':'غير محدّث'}</span></div><p class="mu">${RL[u.role]} · ${e(u.hood||'')} · ${l.length} مادة</p><p class="mu">آخر تحديث: ${la?fd(la):'لا يوجد'}</p>${(c=>c?`<p class="bad">${c} مادة منتهية الصلاحية</p>`:'')(l.filter(i=>ex(i)==2).length)}</div>`}).join('')}
+
+function drawQR(u){const x=$('#qr');if(!x)return;if(typeof qrcode=='undefined'){x.textContent='يتطلب اتصالاً بالإنترنت لإظهار الرمز';return}
+const c=qrcode(0,'M');c.addData(location.origin+location.pathname+'#s'+u.id);c.make();x.innerHTML=c.createSvgTag(6,2)}
+const NB=()=>P==7?7:P==30?10:12;
+function seg(){return '<div class="seg">'+[7,30,365].map(p=>`<button class="${P==p?'on':''}" onclick="P=${p};render()">${PL[p]}</button>`).join('')+'</div>'}
+function ser(l,days,n){const now=Date.now(),o=[];for(let k=0;k<n;k++){const te=now-(n-1-k)*days/n*864e5;let s=0,c=0;l.forEach(i=>{let v=null;for(const p of i.h)if(p[0]<=te+1)v=p[1];if(v!=null){s+=v;c++}});o.push(c?s/c:null)}return o}
+function chart(l){const n=NB(),v=ser(l,P,n),a=v.filter(x=>x!=null);if(a.length<2)return '<p class="mu">لا توجد بيانات كافية لهذه الفترة.</p>';
+const mn=Math.min(...a),mx=Math.max(...a),r=(mx-mn)||1;
+const pts=v.map((y,k)=>y==null?null:[10+k*(280/(n-1)),100-(y-mn)/r*80]).filter(Boolean),d=pts.map(p=>p.join(',')).join(' ');
+const ch=(a[a.length-1]-a[0])/a[0]*100,cl=ch>0?'up':ch<0?'dn':'eq';
+return `<svg viewBox="0 0 300 110" width="100%" role="img"><polygon points="${pts[0][0]},105 ${d} ${pts[pts.length-1][0]},105" fill="#c5a05933"/><polyline points="${d}" fill="none" stroke="#c5a059" stroke-width="2.5"/>${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#0d241e"/>`).join('')}</svg><div class="row mu" style="direction:ltr"><span>الأقدم</span><span>الأحدث</span></div><div class="row"><span class="mu">أدنى متوسط ${fp(Math.round(mn))}</span><span class="mu">أعلى متوسط ${fp(Math.round(mx))}</span></div><div class="${cl}" style="font-weight:800;margin-top:6px">${ch>0?'▲':ch<0?'▼':'▬'} ${Math.abs(ch).toFixed(1)}% خلال ${PL[P]}</div>`}
+function vPr(){const g=groups().map(x=>{const v=ser(x.l,P,NB()).filter(y=>y!=null);return{x,c:v.length>1?(v[v.length-1]-v[0])/v[0]*100:0,a:v.length?v[v.length-1]:0}}).sort((a,b)=>Math.abs(b.c)-Math.abs(a.c));
+return `<h2>تطور الأسعار</h2><p class="mu">متوسط أسعار التجزئة لكل مادة، الأكثر تغيراً أولاً</p>${seg()}`+(g.length?g.map(o=>`<div class="card row"><div><b>${e(o.x.name)}</b><div class="mu">${e(o.x.pack||'')} · ${o.x.l.length} منشأة</div></div><div style="text-align:left"><div class="pr">${fp(Math.round(o.a))}</div><div class="${o.c>0?'up':o.c<0?'dn':'eq'}">${o.c>0?'▲':o.c<0?'▼':'▬'} ${Math.abs(o.c).toFixed(1)}%</div></div></div>`).join(''):'<div class="card"><p class="mu">لا توجد بيانات بعد.</p></div>')}
+function demo(){if(!confirm('تحميل بيانات تجريبية للعرض فقط، وليست أسعاراً رسمية؟'))return;
+const sh=[['ماركت العثمان','الشيخ ضاهر',35.5236,35.7912,'retail'],['سوبرماركت الساحل','الزراعة',35.5149,35.7835,'retail'],['بقالة النور','الصليبة',35.5192,35.7761,'retail'],['مستودع الأمل','طريق حلب',35.5034,35.801,'wholesale']];
+const PD=[['سكر أبيض','مواد أساسية','1 كغ',14500],['رز مصري','مواد أساسية','1 كغ',17500],['زيت عباد الشمس','مواد أساسية','1 لتر',32000],['حليب كامل الدسم','ألبان وأجبان','1 لتر',16000],['لبنة','ألبان وأجبان','500 غ',24000],['معكرونة','معلبات','400 غ',9000],['صابون سائل','منظفات','1 لتر',21000],['بيض','لحوم ودواجن','طبق 30',68000]];
+const DAYS=[360,300,240,180,120,90,60,45,30,21,14,10,7,5,3,1,0];let r=7;const rnd=()=>(r=(r*9301+49297)%233280)/233280,N=Date.now();
+sh.forEach((s,si)=>{const id=N+si;D.u.push({id,demo:1,role:s[4],phone:'091000000'+si,pass:'123456',shop:s[0],hood:s[1],lat:s[2],lng:s[3],status:'approved'});
+PD.forEach((p,pi)=>{let v=p[3]*(0.8+rnd()*0.1);const h=[];DAYS.slice(0,si==2?-3:undefined).forEach(d=>{v*=1+(rnd()-0.35)*0.045;h.push([N-d*864e5,Math.round(v/50)*50])});
+const n=h.length;D.i.push({id:N+si*100+pi,uid:id,name:p[0],type:p[1],kind:pi%2?'محلي':'مستورد',pack:p[2],exp:new Date(N+(si==2&&pi==4?20:200)*864e5).toISOString().slice(0,10),barcode:'62900'+String(si*10+pi).padStart(3,'0'),price:h[n-1][1],prev:h[n-2][1],t:h[n-1][0],h})})});
+save();render();toast('تم تحميل البيانات التجريبية')}
+function undemo(){if(!confirm('حذف كل البيانات التجريبية؟'))return;D.u=D.u.filter(u=>!u.demo);D.i=D.i.filter(i=>D.u.some(u=>u.id==i.uid));save();render()}
+
+const CT=['نظافة وصحة','مادة منتهية الصلاحية','سعر مخالف','أخرى'];let ct=CT[0];let rs='retail';
+function vWel(){const C=[['retail','🏪','تاجر تجزئة','لوائح الأسعار اليومية'],['citizen','🎧','خدمة المواطن','استعلام البورصة والشكاوى'],['admin','🛡','الرقابة التموينية','الضبوط والمطابقة الميدانية'],['wholesale','📦','مورد / تاجر جملة','فواتير وتدفق التوريد']];
+return `<div class="st">${C.map(c=>`<div class="card ${rs==c[0]?'sel':''}" onclick="pick('${c[0]}')"><div style="font-size:26px">${c[1]}</div><b style="font-size:17px">${c[2]}</b><div class="mu">${c[3]}</div></div>`).join('')}</div><div class="card"><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="مثال: 09XXXXXXXX"><label>كلمة المرور / الرمز السري</label><input id="pw" type="password"><div class="er" id="er"></div><button class="btn" onclick="doLogin()">تسجيل الدخول إلى المنظومة</button><p class="mu" style="text-align:center">أو خيارات الوصول السريع</p><button class="btn s" onclick="go('guide')">دخول حر للمواطنين (تصفح دليل النشرات التموينية فقط)</button><button class="btn s" onclick="go('reg')">تسجيل منشأة جديدة</button></div><div class="card row"><b>غرفة العمليات المركزية والدعم الفني</b><a class="sm" href="tel:119">119 📞</a></div>`}
+function pick(r){if(r=='citizen')return go('guide');rs=r;render()}
+function vCm(){return `<div class="card"><h2>تقديم بلاغ</h2><p class="mu">يُسجَّل البلاغ فوراً ويُحال إلى دائرة الرقابة.</p></div><div class="card"><h2 style="font-size:17px">نوع البلاغ</h2><div class="seg" style="flex-wrap:wrap">${CT.map(t=>`<button class="${t==ct?'on':''}" onclick="ct='${t}';render()">${t}</button>`).join('')}</div><label>اسم المنشأة والحي</label><input id="cs" placeholder="مثال: ماركت السلام - شارع بغداد"><label>وصف المخالفة</label><textarea id="cd" placeholder="اكتب ما شاهدته..."></textarea><p class="mu">هويتك مخفية عن المنشأة ولا تظهر إلا للمديرية.</p><div class="er" id="er"></div><button class="btn" onclick="doCm()">إرسال البلاغ</button><button class="btn s" onclick="go('guide')">إلغاء</button></div>`}
+function doCm(){const s=$('#cs').value.trim(),d=$('#cd').value.trim();if(!s)return err('اكتب اسم المنشأة');if(d.length<5)return err('اكتب وصف المخالفة');const n='B'+String(Date.now()).slice(-6);D.c.push({id:n,t:ct,sh:s,d,s:'new',at:Date.now()});save();toast('تم إرسال البلاغ. رقم المتابعة: '+n);go('guide')}
+const CS={new:'قيد المراجعة',done:'تمت المعالجة',rej:'مرفوض'};
+function trk(){const c=D.c.find(x=>x.id==$('#tn').value.trim().toUpperCase());$('#tr').textContent=c?'الحالة: '+CS[c.s]:'لا يوجد بلاغ بهذا الرقم على هذا الجهاز'}
+function vCl(){return `<h2 style="margin-bottom:12px">البلاغات الواردة (${D.c.length})</h2>`+(D.c.length?D.c.slice().reverse().map(c=>`<div class="card"><div class="row"><b>${e(c.t)}</b><span class="tag">${CS[c.s]}</span></div><p class="mu">${e(c.sh)}</p><p class="mu">${e(c.d)}</p><p class="mu ltr" style="text-align:right">${e(c.id)} · ${fd(c.at)}</p>${c.s=='new'?`<div class="row"><button class="sm" onclick="cst('${c.id}','done')">تمت المعالجة</button><button class="sm n" onclick="cst('${c.id}','rej')">رفض</button></div>`:''}</div>`).join(''):'<div class="card"><p class="mu">لا توجد بلاغات حالياً.</p></div>')}
+function cst(id,s){D.c.find(c=>c.id==id).s=s;save();render()}
+let wq='',ar='';
+function wl(role,hx){const l=D.i.filter(i=>{const s=D.u.find(x=>x.id==i.uid);return s&&s.role!='admin'&&(hx?s.status=='approved'&&ex(i)!=2:1)&&(!role||s.role==role)&&(!wq||(i.name+(i.kind||'')+i.barcode+s.shop).includes(wq))}).sort((a,b)=>a.name.localeCompare(b.name,'ar'));
+return l.length?l.map(i=>{const s=D.u.find(x=>x.id==i.uid);return `<div class="card"><div class="row"><b>${e(i.name)}${i.kind?' – '+e(i.kind):''}</b><span class="pr">${fp(i.price)} ${arr(i)}</span></div><p class="mu">${e(i.type)} · ${e(i.pack||'')}${expT(i)}</p><p class="mu">${e(s.shop)} · ${e(s.hood||'')} · ${RL[s.role]} · ${fd(i.t)}</p><p class="mu ltr" style="text-align:right">${e(i.barcode)}</p>${s.lat?`<a class="sm" target="_blank" rel="noopener" href="${map(s)}">الاتجاهات</a>`:''}</div>`}).join(''):'<div class="card"><p class="mu">لا توجد مواد.</p></div>'}
+function vWh(){return `<h2>أسعار الجملة</h2><p class="mu">مواد وأسعار تجار الجملة المعتمدين</p><input placeholder="اسم المادة أو الباركود أو المورد" value="${e(wq)}" oninput="wq=this.value.trim();$('#wr').innerHTML=wl('wholesale',1)"><div id="wr" style="margin-top:12px">${wl('wholesale',1)}</div>`}
+function vAll(){return `<h2>كل المواد (جملة وتجزئة)</h2><div class="chips">${[['','الكل'],['retail','تجزئة'],['wholesale','جملة']].map(c=>`<button class="${ar==c[0]?'on':''}" onclick="ar='${c[0]}';render()">${c[1]}</button>`).join('')}</div><input placeholder="اسم المادة أو الباركود أو المنشأة" value="${e(wq)}" oninput="wq=this.value.trim();$('#wr').innerHTML=wl(ar,0)"><div id="wr" style="margin-top:12px">${wl(ar,0)}</div>`}
+function render(){let u=S&&me();if(S&&(!u||u.status!='approved'))S=u=null;
+$('#out').style.display='flex';$('#out').textContent=u?'⎋':'👤';$('#out').onclick=u?out:null;
+let nav,h;
+if(!u){nav=[];if(view=='reg')h=vReg();else if(view=='cm')h=vCm();else if(view=='guide')h=vHome();else{view='home';h=vWel()}}
+else if(u.role=='admin'){nav=[['req','الطلبات'],['cl','البلاغات'],['tr','التجار'],['all','المواد'],['pr','الأسعار']];if(!['tr','pr','cl','all'].includes(view))view='req';h=view=='all'?vAll():view=='tr'?vTr():view=='pr'?vPr():view=='cl'?vCl():vReq()}
+else{nav=[['my','موادي'],['add','إضافة مادة'],['acc','حسابي']];if(u.role=='retail')nav.splice(2,0,['wh','الجملة']);if(!['add','acc'].concat(u.role=='retail'?['wh']:[]).includes(view))view='my';h=view=='add'?vAdd():view=='acc'?vAcc():view=='wh'?vWh():vMy()}
+$('#rb').textContent=u?(u.role=='admin'?'منظومة الضابطة والرقابة التموينية':'منظومة ضبط الأسعار'):(view=='home'?'بوابة تسجيل الدخول واختيار الصلاحيات':'منظومة الرقابة التموينية');
+$('#m').innerHTML=h;
+$('#nv').innerHTML=nav.map(n=>`<button class="${view==n[0]?'on':''}" onclick="go('${n[0]}')">${n[1]}</button>`).join('');if(u&&view=='acc')drawQR(u)}
+render();
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
