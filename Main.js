@@ -16,6 +16,22 @@ import WholesaleScreen from './WholesaleScreen';
 import CitizenScreen from './CitizenScreen';
 import SupervisionScreen from './SupervisionScreen';
 
+// يمنع ترجمة المتصفح التلقائية لنصوص الصفحة (تفسد العربية)
+if (typeof document !== 'undefined') {
+  try {
+    const root = document.documentElement;
+    root.setAttribute('lang', 'ar');
+    root.setAttribute('translate', 'no');
+    root.classList.add('notranslate');
+    const meta = document.createElement('meta');
+    meta.name = 'google';
+    meta.content = 'notranslate';
+    document.head.appendChild(meta);
+    document.title = 'عين المستهلك - مديرية التجارة الداخلية باللاذقية';
+  } catch (e) {}
+}
+
+
 // العنوان الفرعي في الترويسة لكل شاشة (كما في التصميم الأصلي)
 const SUBTITLES = {
   login: 'بوابة تسجيل الدخول واختيار الصلاحيات',
