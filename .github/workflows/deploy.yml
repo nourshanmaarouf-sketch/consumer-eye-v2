@@ -31,6 +31,10 @@ jobs:
         run: npx expo export --platform web
       - name: Add .nojekyll
         run: touch dist/.nojekyll
+      - name: Add Ain app
+        run: |
+          mkdir -p dist/ain
+          cp index.html sw.js manifest.json emblem.png dist/ain/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
