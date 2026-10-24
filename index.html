@@ -120,6 +120,7 @@ return `<button class="sm" onclick="go('home')">رجوع ›</button><div class=
 function vLogin(){return `<div class="card"><h2>تسجيل دخول التجار والرقابة</h2><p class="mu">الدخول مسموح للحسابات التي وافقت عليها الرقابة التموينية فقط.</p><label>رقم الهاتف المحمول</label><input id="ph" class="ltr" inputmode="tel" placeholder="09XXXXXXXX"><label>كلمة المرور</label><input id="pw" type="password"><div class="er" id="er"></div><button class="btn" onclick="doLogin()">تسجيل الدخول</button></div>`}
 function doLogin(){const p=$('#ph').value.trim(),w=$('#pw').value;let u=D.u.find(x=>x.phone==p);
 if(!u){u={id:Date.now(),role:rs,phone:p||'0900000000',pass:w,shop:rs=='admin'?'دائرة الرقابة التموينية':(RL[rs]||'حساب تجريبي'),status:'approved'};D.u.push(u);save()}
+if(u.role!=rs)return err('هذا الرقم مسجّل في واجهة أخرى. ارجع للصفحة الرئيسية واختر واجهتك الصحيحة.');
 if(u.status=='pending')return err('حسابك قيد المراجعة، لا يمكن الدخول قبل موافقة الرقابة التموينية.');
 if(u.status=='rejected')return err('تم رفض طلب التسجيل. راجع مديرية التجارة الداخلية.');
 S=u.id;try{localStorage.setItem('ain_s',JSON.stringify(S))}catch(x){}go(u.role=='admin'?'req':'my')}
